@@ -134,7 +134,7 @@ The training and validation accuracy and loss plots provide insights into the mo
 ---
 
 ## Screenshots
-<img src="assets/icons/icon.png" alt="drawing" width="200"/>
+<img src="app/src/main/res/raw/ConfusionMatrixCM.png" alt="drawing" width="200"/>
 <img src="assets/screenshots/1716317427478.jpg" alt="drawing" width="200"/>
 <img src="assets/screenshots/1716317427481.jpg" alt="drawing" width="200"/>
 ---
