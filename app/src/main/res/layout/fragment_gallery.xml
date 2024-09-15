@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Comparison"
+         android:textSize="20dp"
+         android:paddingLeft="20dp"
+         android:paddingTop="5dp"
+         android:fontFamily="sans-serif-smallcaps"
+         android:textStyle="bold"/>
+
+        <!-- Header row -->
+        <TextView
+            android:id="@+id/models"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Models \n"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="17dp"
+            android:background="@color/secondary"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Training \n Accuracy"
+            android:background="@color/secondary"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
+            android:layout_toEndOf="@id/models"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/validation_accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Validation \n Accuracy"
+            android:background="@color/secondary"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
+            android:layout_toEndOf="@id/accuracy"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/training_loss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Training \nLoss"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="17dp"
+            android:background="@color/secondary"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@android:color/white"
+            android:layout_toEndOf="@id/validation_accuracy"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/validation_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Validation \nLoss"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="17dp"
+                android:background="@color/secondary"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@android:color/white"
+                android:layout_toEndOf="@id/training_loss"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/parameters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parameters \n "
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="17dp"
+                android:background="@color/secondary"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@android:color/white"
+                android:layout_toEndOf="@id/validation_loss"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/compressed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compressed \n Model Size(Mb)"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="17dp"
+                android:background="@color/secondary"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@android:color/white"
+                android:layout_toEndOf="@id/parameters"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="40dp"/>
+
+
+
+        <!-- Data rows (example rows) -->
+        <TextView
+            android:id="@+id/model_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom    "
+            android:layout_below="@id/models"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/accuracy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accuracy"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/model_1"
+        android:text="0.9983" />
+
+    <TextView
+        android:id="@+id/val_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/validation_accuracy"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/accuracy1"
+        android:text="0.9926" />
+
+    <!-- Example data row 2 -->
+    <TextView
+        android:id="@+id/training_loss_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/training_loss"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/val_1"
+        android:text="0.0066" />
+
+
+            <TextView
+                android:id="@+id/val_loss_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/training_loss_1"
+                android:text="0.0486" />
+
+            <TextView
+                android:id="@+id/par_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/validation_accuracy"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/val_loss_1"
+                android:text="0.7800734" />
+
+            <!-- Example data row 2 -->
+            <TextView
+                android:id="@+id/compressed_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compressed"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/par_1"
+                android:text="29.5" />
+
+    <TextView
+            android:id="@+id/model_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VGG 19    "
+            android:layout_below="@id/model_1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"/>
+
+    <TextView
+        android:id="@+id/accuracy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accuracy1"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@id/model_2"
+        android:text="0.9699" />
+
+    <TextView
+        android:id="@+id/val_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/val_1"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@id/accuracy2"
+        android:text="0.9627" />
+
+
+    <TextView
+        android:id="@+id/training_loss_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/training_loss_1"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@id/val_2"
+        android:text="0.0927" />
+
+            <TextView
+                android:id="@+id/val_loss_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy1"
+                android:layout_alignStart="@+id/val_loss_1"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="26dp"
+                android:text="0.1169" />
+
+            <TextView
+                android:id="@+id/par_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_loss_1"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_loss_2"
+                android:text="28424266" />
+
+            <!-- Example data row 2 -->
+            <TextView
+                android:id="@+id/compressed_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compressed_1"
+                android:layout_marginStart="92dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/par_2"
+                android:text="78" />
+
+            //3
+            <TextView
+                android:id="@+id/model_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SqueezeNet"
+                android:layout_below="@id/model_2"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="26dp"/>
+
+            <TextView
+                android:id="@+id/accuracy3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy2"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/model_3"
+                android:text="0.1060" />
+
+            <TextView
+                android:id="@+id/val_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_2"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/accuracy3"
+                android:text="0.1061" />
+
+
+            <TextView
+                android:id="@+id/training_loss_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/training_loss_2"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_3"
+                android:text="2.3011" />
+
+            <TextView
+                android:id="@+id/val_loss_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy2"
+                android:layout_alignStart="@+id/val_loss_2"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/training_loss_3"
+                android:text="2.3012" />
+
+            <TextView
+                android:id="@+id/par_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_loss_2"
+                android:layout_marginStart="79dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_loss_3"
+                android:text="727626" />
+
+            <!-- Example data row 2 -->
+            <TextView
+                android:id="@+id/compressed_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compressed_2"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/par_3"
+                android:text="1.5" />
+//4
+            <TextView
+                android:id="@+id/model_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GoogleNet \n(Inception)"
+                android:layout_below="@id/model_3"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="26dp"/>
+
+            <TextView
+                android:id="@+id/accuracy4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy3"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/model_4"
+                android:text="0.9997" />
+
+
+            <TextView
+                android:id="@+id/val_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_3"
+                android:layout_marginStart="69dp"
+                android:layout_marginTop="27dp"
+                android:layout_toEndOf="@id/accuracy4"
+                android:text="0.9407" />
+
+            <TextView
+                android:id="@+id/training_loss_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/training_loss_3"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_4"
+                android:text="0.0007" />
+
+            <TextView
+                android:id="@+id/val_loss_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy3"
+                android:layout_alignStart="@+id/val_loss_3"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/training_loss_4"
+                android:text="0.4509" />
+
+            <TextView
+                android:id="@+id/par_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_loss_3"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_loss_4"
+                android:text="23911210" />
+
+            <!-- Example data row 2 -->
+            <TextView
+                android:id="@+id/compressed_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compressed_3"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/par_4"
+                android:text="60" />
+
+            //5
+
+            <TextView
+                android:id="@+id/model_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MobileNet "
+                android:layout_below="@id/model_4"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/accuracy5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy4"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/model_5"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/val_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_4"
+                android:layout_marginStart="98dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/accuracy5"
+                android:text="0.9868" />
+
+
+            <TextView
+                android:id="@+id/training_loss_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/training_loss_4"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_5"
+                android:text="1.018e-9" />
+
+            <TextView
+                android:id="@+id/val_loss_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/accuracy4"
+                android:layout_alignStart="@+id/val_loss_4"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/training_loss_5"
+                android:text="0.2287" />
+
+            <!-- Example data row 2 -->
+            <TextView
+                android:id="@+id/par_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/val_loss_4"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/val_loss_5"
+                android:text="3579978" />
+
+            <TextView
+                android:id="@+id/compressed_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compressed_4"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/par_5"
+                android:text="8.3" />
+
+
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
